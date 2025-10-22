@@ -3,15 +3,20 @@ public class Application {
     double age;
     double height;
 
-    void User(String name, double age, double height) {
+    public Application(String name, double age, double height) {
         this.name = name;
         this.age = age;
         this.height = height;
-    }
-    public void main() {
-         User("Adam", 40.5, 178);
 
-        if (this.name != null) {
+    }
+
+    public static void main() {
+        Application user = new Application("Adam", 40.5, 178);
+        user.checkAgeAndHeight();
+    }
+
+        public void checkAgeAndHeight() {
+
             if (this.age > 30 && this.height > 160) {
                 System.out.println("User is older than 30 and taller than 160cm");
             } else {
@@ -19,4 +24,3 @@ public class Application {
             }
         }
     }
-}
