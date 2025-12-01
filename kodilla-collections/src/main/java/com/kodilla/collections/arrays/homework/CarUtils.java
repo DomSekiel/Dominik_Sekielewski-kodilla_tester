@@ -18,8 +18,7 @@ public class CarUtils {
         } else {
             name = "Nieznany samochod";
         }
-
         System.out.println("Auto : " + name);
-        System.out.println("Predkosc : " + car.getSpeed());
+        //System.out.println("Predkosc : " + car.getSpeed());
     }
 }
