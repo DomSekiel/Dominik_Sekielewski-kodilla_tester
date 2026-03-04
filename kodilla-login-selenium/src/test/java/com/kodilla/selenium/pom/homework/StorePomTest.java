@@ -24,16 +24,53 @@ class StorePomTest {
         storePom = new StorePom(driver);
     }
 
-    @Test
-    public void testSearchResultsCount() {
+    //@Test
+    //public void testSearchResultsCount() {
 
-        assertEquals(2, storePom.search("NoteBook"));
-        assertEquals(1, storePom.search("School"));
-        assertEquals(1, storePom.search("Brand"));
-        assertEquals(0, storePom.search("Business"));
-        assertEquals(1, storePom.search("Gaming"));
-        assertEquals(0, storePom.search("Powerful"));
+    //    assertEquals(2, storePom.search("NoteBook"));
+    //    assertEquals(1, storePom.search("School"));
+    //    assertEquals(1, storePom.search("Brand"));
+    //    assertEquals(0, storePom.search("Business"));
+    //    assertEquals(1, storePom.search("Gaming"));
+    //    assertEquals(0, storePom.search("Powerful"));
+    //}
+
+    @Test
+    void shouldFindTwoResultsForNotebook() {
+        assertEquals(2, storePom.search("NoteBook"),
+                "Expected 2 results for phrase 'NoteBook'");
     }
+
+    @Test
+    void shouldFindOneResultForSchool() {
+        assertEquals(1, storePom.search("School"),
+                "Expected 1 result for phrase 'School'");
+    }
+
+    @Test
+    void shouldFindOneResultForBrand() {
+        assertEquals(1, storePom.search("Brand"),
+                "Expected 1 result for phrase 'Brand'");
+    }
+
+    @Test
+    void shouldFindZeroResultForBusiness() {
+        assertEquals(0, storePom.search("Business"),
+                "Expected 0 result for phrase 'Business'");
+    }
+
+    @Test
+    void shouldFindOneResultForGaming() {
+        assertEquals(1, storePom.search("Gaming"),
+                "Expected 1 result for phrase 'Gaming'");
+    }
+
+    @Test
+    void shouldFindZeroResultForPowerful() {
+        assertEquals(0, storePom.search("Powerful"),
+                "Expected 0 result for phrase 'Powerful'");
+    }
+
 
     @Test
     public void testSearchIsCaseInsensitive() {

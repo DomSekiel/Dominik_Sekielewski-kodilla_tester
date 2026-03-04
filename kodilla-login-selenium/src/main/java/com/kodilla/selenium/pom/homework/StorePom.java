@@ -9,14 +9,17 @@ import java.util.List;
 
 public class StorePom extends StoreAbstractPom {
 
+    private static final String STORE_URL = "https://kodilla.com/pl/test/store";
+
     @FindBy(name = "search")
-    WebElement searchField;
+    private WebElement searchField;
 
     @FindBy(css = "div.element")
-    List<WebElement> products;
+    private List<WebElement> products;
 
     public StorePom(WebDriver driver) {
         super(driver);
+        driver.get(STORE_URL);
         PageFactory.initElements(this.driver, this);
     }
 
