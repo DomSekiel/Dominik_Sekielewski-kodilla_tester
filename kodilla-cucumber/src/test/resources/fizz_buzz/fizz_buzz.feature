@@ -16,3 +16,7 @@ Feature: FizzBuzz
       | 8 | None|
       | 9 | Fizz|
       | 10 | Buzz|
+      | 0 | FizzBuzz |
+      | -4 | None|
+      | -7 | None|
+      | -1 | None|
