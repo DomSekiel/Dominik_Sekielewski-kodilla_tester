@@ -1,5 +1,6 @@
 package com.kodilla.mockito.homework;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -11,6 +12,11 @@ class WeatherNotificationServiceTestSuite {
 
     Location torun = new Location("Torun");
     Location bydgoszcz = new Location("Bydgoszcz");
+
+    @BeforeEach
+    void setUp() {
+        service = new WeatherNotificationService();
+    }
 
     @Test
     public void subscribedUserShouldReceiveNotification() {
@@ -91,5 +97,15 @@ class WeatherNotificationServiceTestSuite {
         service.sendNotificationToLocation("Storm", torun);
 
         Mockito.verify(user, Mockito.never()).receive("Storm");
+    }
+
+    @Test
+    void shouldNotSendNotificationWhenLocationDoesNotExist() {
+
+        service.addSubscriber(user, torun);
+
+        service.sendNotificationToLocation("Storm", bydgoszcz);
+
+        Mockito.verify(user, Mockito.never()).receive(Mockito.anyString());
     }
 }
