@@ -3,8 +3,8 @@ package com.kodilla.rest.domain;
 import java.util.Objects;
 
 public class BookDto {
-    private String title;
-    private String author;
+    private final String  title;
+    private final String author;
 
     public BookDto(String title, String author) {
         this.title = title;
