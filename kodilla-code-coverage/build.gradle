@@ -42,7 +42,7 @@ checkstyle {
 }
 
 spotbugs {
-    ignoreFailures = true
+    ignoreFailures = false
 }
 
 spotbugsMain {
