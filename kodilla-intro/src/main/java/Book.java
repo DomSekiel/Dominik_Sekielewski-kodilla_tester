@@ -1,14 +1,14 @@
 public class Book {
+
     private final String author;
     private final String title;
 
+    public static Book of(String author, String title) {
+        return new Book(author, title);
+    }
     private Book(String author, String title) {
         this.title = title;
         this.author = author;
-    }
-
-    public static Book of(String author, String title) {
-        return new Book(author, title);
     }
 
     public String getAuthor() {
@@ -19,6 +19,7 @@ public class Book {
         return title;
     }
 
+    @Override
     public String toString() {
         return " " + title + "  " + author;
     }
