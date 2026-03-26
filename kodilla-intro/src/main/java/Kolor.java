@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Kolor {
     public static void main(String[] args) {
         String literaKoloru = pierwszaLiteraKoloru();
-        String nazwaKoloru = "";
-        switch (literaKoloru.toLowerCase()) {
+        String nazwaKoloru;
+        switch (literaKoloru) {
             case "c":
                 nazwaKoloru = "Czerwony";
                 break;
@@ -22,6 +22,9 @@ public class Kolor {
                 break;
             case "b":
                 nazwaKoloru = "Brazowy";
+                break;
+            default:
+                nazwaKoloru = "Nieznany kolor";
                 break;
         }
 
