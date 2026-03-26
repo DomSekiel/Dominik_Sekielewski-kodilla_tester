@@ -1,6 +1,7 @@
 public class User {
-    String name;
-    int age;
+
+    private String name;
+    private int age;
 
     public User(String name, int age) {
         this.name = name;
@@ -15,7 +16,7 @@ public class User {
         return age;
     }
 
-    public static <result> void main(String[] args) {
+    public static void main(String[] args) {
         User stefan = new User("Stefan", 23);
         User kasia = new User("Kasia", 32);
         User zygmunt = new User("Zygmunt", 50);
