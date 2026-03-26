@@ -1,5 +1,7 @@
 public class GradesPublic {
-    public static void main() {
+
+    public static void main(String[] args) {
+
         Grades oceny = new Grades();
         oceny.add(1);
         oceny.add(6);
