@@ -1,15 +1,26 @@
 package com.kodilla.inheritance.homework;
 
 public class Windows extends OperatingSystem    {
+
     public Windows(int releaseYear) {
         super(releaseYear);
     }
+
     @Override
     public void turnOn()    {
-        System.out.println("System win sie otwiera");
+        super.turnOn();
+        System.out.println("Witaj Windows");
     }
+
     @Override
     public void turnOff()   {
-        System.out.println("System win sie zamyka");
+        super.turnOff();
+        System.out.println("Zegnaj Windows");
+    }
+
+    @Override
+    public void displayYearOfRelease()  {
+        System.out.print("Windows -> ");
+        super.displayYearOfRelease();
     }
 }

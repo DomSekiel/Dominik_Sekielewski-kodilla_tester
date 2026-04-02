@@ -1,11 +1,11 @@
 package com.kodilla.abstracts.homework;
 
-public class Square extends Shape {
+public class Square extends Rectangle {
 
     private double width;
 
     public Square(double width) {
-        this.width = width;
+        super(width, width);
     }
 
     @Override

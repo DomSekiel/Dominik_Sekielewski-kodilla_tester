@@ -1,15 +1,26 @@
 package com.kodilla.inheritance.homework;
 
 public class Linux extends OperatingSystem {
+
     public Linux(int releaseYear) {
         super(releaseYear);
     }
+
     @Override
     public void turnOn() {
-        System.out.println("System lin sie otwiera");
+        super.turnOn();
+        System.out.println("Witaj Linux");
     }
+
     @Override
     public void turnOff() {
-        System.out.println("System lin sie zamyka");
+        super.turnOff();
+        System.out.println("Zegnaj Linux");
+    }
+
+    @Override
+    public void displayYearOfRelease()  {
+        System.out.print("Linux -> ");
+        super.displayYearOfRelease();
     }
 }

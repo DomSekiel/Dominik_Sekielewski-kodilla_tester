@@ -1,16 +1,26 @@
 package com.kodilla.abstracts.homework;
 
-import java.awt.*;
-
 public class Person {
-    public String firstName;
-    public int age;
-    public Job job;
+    private String firstName;
+    private int age;
+    private Job job;
 
     public Person(String firstName, int age, Job job) {
         this.firstName = firstName;
         this.age = age;
         this.job = job;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Job getJob() {
+        return job;
     }
 
     public void showResponsibilities() {

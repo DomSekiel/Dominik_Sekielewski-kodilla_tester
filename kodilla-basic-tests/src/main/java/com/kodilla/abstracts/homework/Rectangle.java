@@ -10,7 +10,15 @@ public Rectangle(double width, double height) {
     this.height = height;
 }
 
-@Override
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    @Override
 public double area() {
     return width * height;
 }
