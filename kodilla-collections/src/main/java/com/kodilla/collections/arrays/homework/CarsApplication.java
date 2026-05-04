@@ -12,7 +12,7 @@ public class CarsApplication {
     public static Car drawCar() {
         Random random = new Random();
         int type = random.nextInt(3);
-        Car car; // dlaczego trzeba użyć
+        Car car;
 
         if (type == 0) car = new Ford();
         else if (type == 1) car = new Opel();
@@ -27,7 +27,7 @@ public class CarsApplication {
     public static void main(String[] args) {
 
         Random random = new Random();
-        int size = random.nextInt(15);
+        int size = random.nextInt(15) +1;
         Car[] cars = new Car[size];
         for (int i = 0; i < cars.length; i++) {
             cars[i] = drawCar();

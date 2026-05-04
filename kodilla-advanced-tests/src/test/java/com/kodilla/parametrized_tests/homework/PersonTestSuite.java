@@ -11,15 +11,22 @@ public class PersonTestSuite {
 
     static Stream<Arguments> providePersonData() {
         return Stream.of(
+                // very low BMI
+                Arguments.of(1.70, 40, "Very severely underweight"),
+                Arguments.of(1.70, 45, "Severely underweight"),
+
+                // edge cases
+                Arguments.of(1.75, 56.7, "Normal (healthy weight)"), // 18,5142
+                Arguments.of(1.75, 76.6, "Overweight"), // 25,0122
+                Arguments.of(1.75, 91.9, "Obese Class I (Moderately obese)"), // 30,0081
+
+                // high BMI
+                Arguments.of(1.50, 300, "Obese Class VI (Hyper Obese)"),
+
+                // other
                 Arguments.of(1.75, 50, "Underweight"),
                 Arguments.of(1.80, 70, "Normal (healthy weight)"),
-                Arguments.of(1.75, 90, "Overweight"),
-                Arguments.of(1.60, 110, "Obese Class I (Moderately obese)"),
-                Arguments.of(1.60, 140, "Obese Class II (Severely obese)"),
-                Arguments.of(1.60, 180, "Obese Class III (Very severely obese)"),
-                Arguments.of(1.55, 200, "Obese Class IV (Morbidly Obese)"),
-                Arguments.of(1.50, 250, "Obese Class V (Super Obese)"),
-                Arguments.of(1.50, 300, "Obese Class VI (Hyper Obese)")
+                Arguments.of(1.75, 90, "Overweight")
         );
     }
 

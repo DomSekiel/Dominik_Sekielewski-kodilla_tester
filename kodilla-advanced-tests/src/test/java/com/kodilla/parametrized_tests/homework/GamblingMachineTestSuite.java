@@ -1,7 +1,5 @@
 package com.kodilla.parametrized_tests.homework;
 
-import com.kodilla.parametrized_tests.homework.GamblingMachine;
-import com.kodilla.parametrized_tests.homework.InvalidNumbersException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -12,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GamblingMachineTestSuite {
     @ParameterizedTest
-    @CsvFileSource(resources = "/numbersForGamblingMachine.csv")
+    @CsvFileSource(resources = "/invalidNumbers.csv")
     void shouldThrowInvalidNumbersException(int n1, int n2, int n3, int n4, int n5, int n6) {
 
         // given
@@ -29,7 +27,7 @@ class GamblingMachineTestSuite {
         assertThrows(InvalidNumbersException.class,() -> gamblingMachine.howManyWins(userNumbers));
     }
     @ParameterizedTest
-    @CsvFileSource(resources = "/numbersForGamblingMachine.csv")
+    @CsvFileSource(resources = "/validNumbers.csv")
     void numberOfWinsShouldBeBetween0And6(int n1, int n2, int n3, int n4, int n5, int n6) throws InvalidNumbersException {
         GamblingMachine gamblingMachine = new GamblingMachine();
         Set<Integer> userNumbers = Set.of(n1, n2, n3, n4, n5, n6);

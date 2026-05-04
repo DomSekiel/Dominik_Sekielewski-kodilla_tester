@@ -25,11 +25,12 @@ public class School {
     }
 
     public ArrayList<Integer> getStudentsInClass() {
-        return studentsInClass;
+        return new ArrayList<>(studentsInClass);
     }
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         School school = (School) o;
         return Objects.equals(schoolName, school.schoolName) && Objects.equals(studentsInClass, school.studentsInClass);

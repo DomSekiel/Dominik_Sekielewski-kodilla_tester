@@ -18,4 +18,16 @@ public class Skoda implements Car{
     public void decreaseSpeed() {
         speed -= 7;
     }
+
+    @Override
+    public String getName() {
+        return "Skoda";
+    }
+
+    @Override
+    public String toString() {
+        return "Skoda{" +
+                "speed=" + speed +
+                '}';
+    }
 }

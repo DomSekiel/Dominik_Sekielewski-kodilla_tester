@@ -1,7 +1,8 @@
-package parametrized_tests.homework;
+package com.kodilla.parametrized_tests.homework;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.NullSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,5 +20,11 @@ class UserValidatorTestSuite {
     @CsvSource({"'Jan_123', true", "'Jan.Kowalski', true", "'Jak-Kowalski', true", "'Jan123', true", "'JK', false", "'J', false", "'jk', false", "'Jan@Kowalski', false", "'Jan#Kowalski', false", "'', false"})
     void shouldReturnExpectedResultForUsernameValidation(String username, boolean expected) {
         assertEquals(expected, validator.validateUsername(username));
+    }
+
+    @ParameterizedTest
+    @NullSource
+    void shouldReturnFalseForNullUsername(String username) {
+        assertEquals(false, validator.validateUsername(username));
     }
 }

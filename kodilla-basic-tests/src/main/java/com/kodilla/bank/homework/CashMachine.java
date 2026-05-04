@@ -1,5 +1,7 @@
 package com.kodilla.bank.homework;
 
+import java.util.Arrays;
+
 public class CashMachine {
 
     private int[] transactions = new int[0];
@@ -24,6 +26,6 @@ public class CashMachine {
     }
 
     public int[] getTransactions() {
-        return transactions;
+        return Arrays.copyOf(transactions, transactions.length);
     }
 }

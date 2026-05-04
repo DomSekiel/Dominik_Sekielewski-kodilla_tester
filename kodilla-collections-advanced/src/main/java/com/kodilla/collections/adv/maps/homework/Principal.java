@@ -15,6 +15,7 @@ public class Principal {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Principal principal = (Principal) o;
         return Objects.equals(name, principal.name);

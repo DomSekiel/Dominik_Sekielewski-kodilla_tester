@@ -1,51 +1,87 @@
 package com.kodilla.stream.homework;
 
-import com.kodilla.stream.UsersRepository;
 import com.kodilla.stream.User;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class ForumStatsTest {
 
     @Test
-    void NonEmptyUserList() {
-        List<User> users = UsersRepository.getUserList();
-        assertFalse(users.isEmpty());
+    void testEmptyList() {
+        //given
+        List<User> users = List.of();
+
+        // when
+        double above = ForumStats.averagePostsAboveOrEqual40(users);
+        double below = ForumStats.averagePostsBelow40(users);
+
+        // then
+        assertEquals(0, above,0.01);
+        assertEquals(0, below,0.01);
     }
 
     @Test
-    void AveragePostsAboveOrEqual40() {
+    void shouldCalculateAverageForBothGroups() {
         // given
-        List<User> users = UsersRepository.getUserList();
+        List<User> users = List.of(
+                new User("Walter White", 50, 7, "Chemists"),
+                new User("Gus Firling", 49, 0, "Board"),
+                new User("Tuco Salamanca", 34, 116, "Manager"),
+                new User ("Jessie Pinkman", 25, 4648, "Sales")
+        );
 
         // when
-        double averagePostsAboveOrEqual40 = users.stream()
-                .filter(user -> user.getAge() >= 40)
-                .mapToInt(User::getNumberOfPosts)
-                .average()
-                .orElse(0);
+        double above = ForumStats.averagePostsAboveOrEqual40(users);
+        double below = ForumStats.averagePostsBelow40(users);
 
         // then
-        assertEquals(2.25, averagePostsAboveOrEqual40);
+        assertEquals(3.5, above,0.01);
+        assertEquals(2382,below,0.01);
     }
 
     @Test
-    void AveragePostsBelow40() {
+    void shouldReturnZeroWhenNoUsersBelow40() {
         // given
-        List<User> users = UsersRepository.getUserList();
+        List<User> users = List.of(
+                new User("Gus Firling", 49, 0, "Board"),
+                new User("Gale Boetiticher", 44, 2, "Chemists")
+        );
 
         // when
-        double averagePostsBelow40 = users.stream()
-                .filter(user -> user.getAge() < 40)
-                .mapToInt(User::getNumberOfPosts)
-                .average()
-                .orElse(0);
+        double result = ForumStats.averagePostsBelow40(users);
 
         // then
-        assertEquals(2382.0, averagePostsBelow40);
+        assertEquals(0, result, 0.01);
+    }
+
+    @Test
+    void shouldIncludeUserWithAgeExactly40() {
+        // given
+        List<User> users = List.of(
+                new User("John Doe", 40, 101, "Manager")
+        );
+
+        // when
+        double result = ForumStats.averagePostsAboveOrEqual40(users);
+
+        // then
+        assertEquals(101, result, 0.01);
+    }
+
+    @Test
+    void shouldReturnPostsForSingleUser() {
+        // given
+        List<User> users = List.of(
+                new User("Jessie Pinkman", 25, 4648, "Sales")
+        );
+
+        // when
+        double result = ForumStats.averagePostsBelow40(users);
+
+        // then
+        assertEquals(4648, result,0.01);
     }
 }

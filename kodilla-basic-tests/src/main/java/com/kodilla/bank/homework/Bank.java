@@ -39,7 +39,7 @@ public class Bank {
         int count = 0;
         for (CashMachine cashMachine : cashMachines) {
             for (int transaction : cashMachine.getTransactions()) {
-                if (deposits && transaction > 0 || !deposits && transaction < 0) {
+                if ((deposits && transaction > 0) || (!deposits && transaction < 0)) {
                     count++;
                 }
             }
@@ -53,7 +53,7 @@ public class Bank {
 
         for (CashMachine cashMachine : cashMachines) {
             for (int transaction : cashMachine.getTransactions()) {
-                if (deposits && transaction > 0 || !deposits && transaction < 0) {
+                if ((deposits && transaction > 0) || (!deposits && transaction < 0)) {
                     sum += transaction;
                     count++;
                 }

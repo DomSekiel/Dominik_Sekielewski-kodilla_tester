@@ -17,4 +17,18 @@ class WarehouseTestSuit {
         // when & then
         assertThrows(OrderDoesntExistException.class, () -> warehouse.getOrder("ORDER99"));
     }
+
+    @Test
+    void shouldReturnOrderWhenOrderExists() throws OrderDoesntExistException {
+        // given
+        Warehouse warehouse = new Warehouse();
+        Order order = new Order("ORDER1");
+        warehouse.addOrder(order);
+
+        // when
+        Order result = warehouse.getOrder("ORDER1");
+
+        // then
+        assertEquals(order, result);
+    }
 }

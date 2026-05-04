@@ -4,11 +4,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CashMachineTest {
+class CashMachineTestSuite {
+
+    CashMachine cashMachine;
 
     @BeforeEach
-    void setUp() {}
-    CashMachine cashMachine = new CashMachine();
+    void setUp() {
+
+        cashMachine = new CashMachine();
+    }
 
     @Test
     void shouldAddTransactionsAndReturnCorrectBalance() {
@@ -33,5 +37,10 @@ class CashMachineTest {
     void shouldReturnZeroBalanceWhenNoTransactions() {
 
         assertEquals(0, cashMachine.getBalance());
+    }
+    @Test
+    void shouldReturnZeroTransactionsWhenEmpty() {
+
+        assertEquals(0, cashMachine.getNumberOfTransactions());
     }
 }

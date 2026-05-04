@@ -7,4 +7,6 @@ public interface Car    {
     void increaseSpeed ();
 
     void decreaseSpeed ();
+
+    String getName();
 }
