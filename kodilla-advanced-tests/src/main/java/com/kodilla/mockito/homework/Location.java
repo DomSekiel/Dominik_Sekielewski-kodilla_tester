@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Location {
 
-    private String name;
+    private final String name;
 
     public Location(String name) {
         this.name = name;

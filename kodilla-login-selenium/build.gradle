@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.kodilla'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    implementation 'org.seleniumhq.selenium:selenium-java:4.18.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.mockito:mockito-core:5.14.2'
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation(group: 'com.github.lewka', name: 'ocular', version: '1.0.5'){
+        exclude group: "net.sf", module: "jargs"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

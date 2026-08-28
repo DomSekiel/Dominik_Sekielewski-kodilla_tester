@@ -30,4 +30,31 @@ public class ApplicationTest {
         // then
         assertEquals("<undefined>", result);
     }
+
+    @Test
+    void testShouldReturnStudentData() {
+        // given
+        Teacher teacher = new Teacher("Maciej Skorza");
+        Student student = new Student("Piotr Zielinski", teacher);
+
+        // when
+        String studentName = student.getName();
+        Teacher studentTeacher = student.getTeacher();
+
+        // then
+        assertEquals("Piotr Zielinski", studentName);
+        assertEquals(teacher, studentTeacher);
+    }
+
+    @Test
+    void testShouldReturnTeacherName() {
+        // given
+        Teacher teacher = new Teacher("Maciej Skorza");
+
+        // when
+        String teacherName = teacher.getName();
+
+        // then
+        assertEquals("Maciej Skorza", teacherName);
+    }
 }

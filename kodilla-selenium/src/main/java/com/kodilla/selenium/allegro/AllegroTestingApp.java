@@ -23,7 +23,6 @@ public class AllegroTestingApp {
 
         driver.get("https://www.ebay.com");
 
-
         //WebElement categoryDropdown = driver.findElement(By.xpath("//select[@id='gh-cat']"));
         WebElement categoryDropdown = driver.findElement(By.id("gh-cat"));
         categoryDropdown.click();

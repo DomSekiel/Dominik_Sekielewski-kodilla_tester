@@ -4,11 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
+
 class WeatherNotificationServiceTestSuite {
     WeatherNotificationService service = new WeatherNotificationService();
 
-    User user = Mockito.mock(User.class);
-    User secondUser = Mockito.mock(User.class);
+    User user = mock(User.class);
+    User secondUser = mock(User.class);
 
     Location torun = new Location("Torun");
     Location bydgoszcz = new Location("Bydgoszcz");
@@ -107,5 +110,16 @@ class WeatherNotificationServiceTestSuite {
         service.sendNotificationToLocation("Storm", bydgoszcz);
 
         Mockito.verify(user, Mockito.never()).receive(Mockito.anyString());
+    }
+    @Test
+    void shouldThrowExceptionWhenLocationIsNull() {
+
+        assertThrows(IllegalArgumentException.class, () -> service.addSubscriber(user, null));
+    }
+
+    @Test
+    void shouldThrowExceptionWhenUserIsNull() {
+
+        assertThrows(IllegalArgumentException.class, () -> service.addSubscriber(null, torun));
     }
 }

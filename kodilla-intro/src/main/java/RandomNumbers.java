@@ -1,22 +1,24 @@
-import java.util.Random; // konieczność zawarcia tego wyrażania wygooglowane w stackoverflow
+//import java.util.Random; // konieczność zawarcia tego wyrażania wygooglowane w stackoverflow
+
+import java.util.Random;
 
 public class RandomNumbers {
-    int min = 0;
+    int min = 0; //atrybuty
     int max = 30;
     int result = 0;
 
     public void generateRandomNumbers() {
-        Random random = new Random();
+        Random random = new Random();//konstruktor bezargumentowy
         while (result <= 5000) {
             int number = random.nextInt(31);
-            result = result + number;
+            result = result + number; //pętla nie zwraca tylko iteruje
 
             System.out.println("Ostateczny wynik: " + result);
 
-            if (number >= min) {
+            if (number <= min) {
                min = number;
             }
-            if (number <= max) {
+            if (number >= max) {
                 max = number;
             }
         }
