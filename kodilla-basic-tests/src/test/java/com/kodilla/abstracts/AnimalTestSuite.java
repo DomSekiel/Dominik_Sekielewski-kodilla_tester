@@ -27,4 +27,30 @@ class AnimalTestSuite {
         // Then
         Assertions.assertEquals(2, numberOfLegs);
     }
+
+    @Test
+    void shouldProcessDog() {
+        // Given
+        Dog dog = new Dog();
+        AnimalProcessor processor = new AnimalProcessor();
+
+        // When
+        processor.process(dog);
+
+        // Then
+        Assertions.assertEquals(4, dog.getNumberOfLegs());
+    }
+
+    @Test
+    void shouldProcessDuck() {
+        // Given
+        Duck duck = new Duck();
+        AnimalProcessor processor = new AnimalProcessor();
+
+        // When
+        processor.process(duck);
+
+        // Then
+        Assertions.assertEquals(2, duck.getNumberOfLegs());
+    }
 }
