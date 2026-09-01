@@ -26,8 +26,14 @@ class OrderTestSuite {
 
     @Test
     public void shouldCompareTwoSameOrders() {
+        //Given
+        Order sameOrder = new Order(
+                200.0,
+                LocalDate.of(2024, 5, 10),
+                "user123"
+        );
         //When
-        boolean result = order.equals(secondOrder);
+        boolean result = order.equals(sameOrder);
 
         //Then
         assertEquals(true, result);

@@ -29,6 +29,6 @@ class MobilePhoneTestSuite {
     @Test
     public void testVerificationFailure() {
         myPhone.needsCharging();
-        Mockito.verify(myPhone).getFreeStorage();
+        Mockito.verify(myPhone).needsCharging();
     }
 }

@@ -41,7 +41,7 @@ class StringManipulatorTestSuite {
         );
     }
     @ParameterizedTest
-    @MethodSource(value = "parametrized_tests.StringSources#provideStringsForTestingLength")
+    @MethodSource(value = "provideStringsForTestingLength")
     public void shouldCalculateStringLengthWithoutSpaces(String input, int expected) {
         assertEquals(expected, manipulator.getStringLengthWithoutSpaces(input));
     }
