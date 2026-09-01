@@ -18,7 +18,6 @@ import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL;
-import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.SKIP;
 
 public class ApplicationTest {
 
@@ -62,7 +61,7 @@ public class ApplicationTest {
         File screenshot = driver.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshot, new File("./build/screenshots/" + screenshot.getName()));
 
-        String title = driver.findElement(By.id("title")).getText();
-        assertEquals("My dockerized web page.", title);
+        String title = driver.findElement(By.tagName("h1")).getText();
+        assertEquals("Dominik Sekielewski", title);
     }
 }
