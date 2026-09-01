@@ -1,0 +1,16 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1788281444755,1277,HTTP Request - kodilla.com,200,OK,Thread Group 1-1,text,true,,14533,228,2,2,https://kodilla.com/pl,1084,0,967
+1788281444755,1092,HTTP Request - kodilla.com-0,301,Moved Permanently,Thread Group 1-1,text,true,,1393,113,2,2,https://kodilla.com/,1084,0,967
+1788281445850,182,HTTP Request - kodilla.com-1,200,OK,Thread Group 1-1,text,true,,13140,115,2,2,https://kodilla.com/pl,181,0,0
+1788281445550,724,HTTP Request - kodilla.com,200,OK,Thread Group 1-2,text,true,,14527,228,1,1,https://kodilla.com/pl,443,0,246
+1788281445550,444,HTTP Request - kodilla.com-0,301,Moved Permanently,Thread Group 1-2,text,true,,1393,113,1,1,https://kodilla.com/,443,0,246
+1788281445995,279,HTTP Request - kodilla.com-1,200,OK,Thread Group 1-2,text,true,,13134,115,1,1,https://kodilla.com/pl,279,0,0
+1788281446549,595,HTTP Request - kodilla.com,200,OK,Thread Group 1-3,text,true,,14527,228,1,1,https://kodilla.com/pl,424,0,231
+1788281446549,424,HTTP Request - kodilla.com-0,301,Moved Permanently,Thread Group 1-3,text,true,,1391,113,1,1,https://kodilla.com/,424,0,231
+1788281446974,170,HTTP Request - kodilla.com-1,200,OK,Thread Group 1-3,text,true,,13136,115,1,1,https://kodilla.com/pl,169,0,0
+1788281447548,607,HTTP Request - kodilla.com,200,OK,Thread Group 1-4,text,true,,14535,228,1,1,https://kodilla.com/pl,432,0,239
+1788281447548,432,HTTP Request - kodilla.com-0,301,Moved Permanently,Thread Group 1-4,text,true,,1395,113,1,1,https://kodilla.com/,432,0,239
+1788281447980,175,HTTP Request - kodilla.com-1,200,OK,Thread Group 1-4,text,true,,13140,115,1,1,https://kodilla.com/pl,174,0,0
+1788281448547,552,HTTP Request - kodilla.com,200,OK,Thread Group 1-5,text,true,,14537,228,1,1,https://kodilla.com/pl,402,0,213
+1788281448547,402,HTTP Request - kodilla.com-0,301,Moved Permanently,Thread Group 1-5,text,true,,1395,113,1,1,https://kodilla.com/,402,0,213
+1788281448950,149,HTTP Request - kodilla.com-1,200,OK,Thread Group 1-5,text,true,,13142,115,1,1,https://kodilla.com/pl,149,0,0
